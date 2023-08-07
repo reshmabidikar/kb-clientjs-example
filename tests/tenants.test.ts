@@ -9,11 +9,47 @@ const config: killbill.Configuration = new killbill.Configuration({
   basePath: 'http://localhost:8080',
 });
 
+// const accountApi:killbill.AccountApi = new killbill.AccountApi(config)
+//   const response: AxiosResponse<killbill.Account, any> =  accountApi.getAccountByKey("4692d497-4df3-40c9-8b10-789eddbcf587")
+//     .then(result => console.log(result))
+//     .catch(error => console.log(error));
+//     console.log(response.data);
+
 describe('Tenant API tests', () => {
-  test('Get list of tenants', async () => {
-    console.log('Get list of tenants');
+  test('Tenant by API key', async () => {
+    console.log('Tenant by API key');
     const api: killbill.TenantApi = new killbill.TenantApi(config);
-    const respone: AxiosResponse<killbill.Tenant, any> = await api.getTenantByApiKey('bob');
-    console.log(respone.data);
+    const apiKey = 'bob'
+    const response: AxiosResponse<killbill.Tenant, any> = await api.getTenantByApiKey(apiKey);
+    console.log(response.data);
   });
+
+  test('Tenant By Id', async () => {
+    console.log('Tenant By Id');
+    const api: killbill.TenantApi = new killbill.TenantApi(config);
+    const id='9ab7db57-02a9-430c-bdfa-0a8c24d2e368'
+    const response: AxiosResponse<killbill.Tenant, any> = await api.getTenant(id);
+    console.log(response.data);
+  });
+
+//   test('Create Tenant', async () => {
+//     console.log('Create Tenant');
+//     const api: killbill.TenantApi = new killbill.TenantApi(config);
+//     const tenant: killbill.Tenant = {apiKey: `js_tenant`, apiSecret: `js_tenant`};
+// //     api.createTenant(tenant, 'created-by')
+// //     .then(result => console.log(result.data))
+// //     .catch(error => console.log(error));
+//     const response: AxiosResponse<killbill.Tenant, any> = await api.createTenant(tenant, 'created-by');
+//     console.log(response.data);
+//   });
+
+//   test('Create Tenant', async () => {
+//     console.log('Create Tenant');
+//     const api: killbill.TenantApi = new killbill.TenantApi(config);
+//     const tenant: killbill.Tenant = {apiKey: `js_tenant1`, apiSecret: `js_tenant1`};
+//     const respone: AxiosResponse<killbill.Tenant, any> = await api.createTenant(tenant, 'created-by');
+//     console.log(respone.data);
+//   });
+
+
 });
