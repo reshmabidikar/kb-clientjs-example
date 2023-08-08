@@ -9,12 +9,6 @@ const config: killbill.Configuration = new killbill.Configuration({
   basePath: 'http://localhost:8080',
 });
 
-// const accountApi:killbill.AccountApi = new killbill.AccountApi(config)
-//   const response: AxiosResponse<killbill.Account, any> =  accountApi.getAccountByKey("4692d497-4df3-40c9-8b10-789eddbcf587")
-//     .then(result => console.log(result))
-//     .catch(error => console.log(error));
-//     console.log(response.data);
-
 describe('Tenant API tests', () => {
   test('Tenant by API key', async () => {
     console.log('Tenant by API key');
