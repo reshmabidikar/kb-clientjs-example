@@ -18,7 +18,8 @@ describe('Tenant Plugin Configuration', () => {
     const plugin_name = 'demo_plugin';
     const body = 'tenant_config'
 
-    api.uploadPluginConfiguration(body, plugin_name, 'created-by', 'reason', 'comment')
+    const response: AxiosResponse<killbill.TenantKeyValue, any> =  await api.uploadPluginConfiguration(body, plugin_name, 'created-by', 'reason', 'comment');
+    console.log(response.data);
   });
 
   test('Retrieve Plugin Configuaration', async () => {
