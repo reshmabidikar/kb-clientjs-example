@@ -17,7 +17,7 @@ describe('Add Custom Field', () => {
 
     const subscriptionId = '92820d1c-1d4c-46eb-9010-26b0626a1927';
 
-    const response: AxiosResponse<killbill.Tag[], any> = await api.getSubscriptionAuditLogsWithHistory(subscriptionId, 'created_by');
+    const response: AxiosResponse<killbill.Tag[], any> = await api.getSubscriptionAuditLogsWithHistory(subscriptionId);
     console.log(response.data);
   });
 

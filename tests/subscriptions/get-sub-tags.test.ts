@@ -19,7 +19,7 @@ describe('Add Custom Field', () => {
     const includeDeleted = false;
     const audit = 'NONE';
 
-    const response: AxiosResponse<killbill.Tag[], any> = await api.getSubscriptionTags(subscriptionId, includeDeleted, audit, 'created_by');
+    const response: AxiosResponse<killbill.Tag[], any> = await api.getSubscriptionTags(subscriptionId, includeDeleted, audit);
     console.log(response.data);
   });
 

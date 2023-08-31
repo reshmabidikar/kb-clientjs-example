@@ -17,7 +17,7 @@ describe('Add Custom Field', () => {
 
     const eventId = 'dc283026-5be0-4e47-8190-b62fb0c9e357';
 
-    const response: AxiosResponse<killbill.Tag[], any> = await api.getSubscriptionEventAuditLogsWithHistory(eventId, 'created_by');
+    const response: AxiosResponse<killbill.Tag[], any> = await api.getSubscriptionEventAuditLogsWithHistory(eventId);
     console.log(response.data);
   });
 
